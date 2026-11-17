@@ -28,7 +28,7 @@
             line-height: 1.6;
         }
         
-        /* Cabeçalho com fundo degradê rosa */
+        /* Cabeçalho */
         .header-container {
             width: 100%;
             padding: 20px 20px 10px;
@@ -53,7 +53,6 @@
             gap: 20px;
         }
         
-        /* Estilo da modelo estudante */
         .model-container {
             flex: 1;
             min-width: 300px;
@@ -71,7 +70,6 @@
             transform: scale(1.02);
         }
         
-        /* Estilo do texto */
         .text-container {
             flex: 1;
             min-width: 300px;
@@ -94,12 +92,6 @@
             opacity: 0.95;
         }
         
-        .highlight {
-            font-weight: 700;
-            color: #ffeb3b;
-        }
-        
-        /* Botão de ação */
         .cta-button {
             display: inline-block;
             background-color: #ffffff;
@@ -122,7 +114,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
         
-        /* Área de teste (inicialmente oculta) */
+        /* Área de teste */
         .test-area {
             max-width: 1200px;
             margin: 0 auto;
@@ -136,22 +128,21 @@
         }
         
         .test-area.active {
-            max-height: 3000px;
+            max-height: 5000px; /* Aumentado para caber o banner */
             padding: 40px 20px;
             margin-top: -10px;
             z-index: 10;
             position: relative;
         }
         
-        /* Classe para esconder o cabeçalho do teste quando mostrar resultado */
         .test-header {
             text-align: center;
             margin-bottom: 30px;
-            display: block; /* Visível por padrão */
+            display: block;
         }
         
         .test-header.hidden {
-            display: none; /* Escondido quando mostrar resultado */
+            display: none;
         }
         
         .test-title {
@@ -168,16 +159,15 @@
             line-height: 1.2;
         }
         
-        /* Barra de progresso */
         .progress-container {
             width: 100%;
             max-width: 800px;
             margin: 25px auto;
-            display: block; /* Visível por padrão */
+            display: block;
         }
         
         .progress-container.hidden {
-            display: none; /* Escondido quando mostrar resultado */
+            display: none;
         }
         
         .progress-bar {
@@ -203,15 +193,14 @@
             font-size: 1.1rem;
         }
         
-        /* Formulário do teste */
         .test-form {
             max-width: 900px;
             margin: 0 auto;
-            display: block; /* Visível por padrão */
+            display: block;
         }
         
         .test-form.hidden {
-            display: none; /* Escondido quando mostrar resultado */
+            display: none;
         }
         
         .question-container {
@@ -219,7 +208,6 @@
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 25px;
-            border-left: 0px solid #e55ca4;
             transition: all 0.3s ease;
         }
         
@@ -323,18 +311,10 @@
             color: white;
         }
         
-        .btn-next:hover {
-            background-color: #155f36;
-        }
-        
         .btn-submit {
             background-color: #ff6b35;
             color: white;
             display: none;
-        }
-        
-        .btn-submit:hover {
-            background-color: #e55a2b;
         }
         
         /* Formulário de contato */
@@ -344,7 +324,6 @@
             padding: 30px;
             background-color: #f8f8f8;
             border-radius: 12px;
-            border-left: 0px solid #9d2679;
             display: none;
         }
         
@@ -467,20 +446,93 @@
             font-weight: 600;
         }
         
-        .btn-send:hover {
-            background-color: #7d1e61;
-        }
-        
         .btn-cancel {
             background-color: #f0f0f0;
             color: #555;
         }
-        
-        .btn-cancel:hover {
-            background-color: #e0e0e0;
+
+        /* ============================================
+           NOVO: BANNER DE BOLSA 30%
+           ============================================ */
+        .promo-banner-container {
+            display: none; /* Escondido por padrão */
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            animation: fadeIn 0.8s ease;
         }
+
+        .promo-banner-img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+
+        .promo-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-promo-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-promo-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-promo-result {
+            background-color: #ff6b35;
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-promo-result:hover {
+            background-color: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           FIM NOVO BANNER
+           ============================================ */
         
-        /* Resultado do teste */
+        /* Resultado */
         .result-container {
             max-width: 900px;
             margin: 40px auto;
@@ -570,7 +622,6 @@
             flex-grow: 1;
         }
         
-        /* Botão WhatsApp para inscrição */
         .whatsapp-inscricao {
             display: inline-block;
             background-color: #25D366;
@@ -588,7 +639,7 @@
             transform: translateY(-2px);
         }
         
-        /* Container do vídeo do YouTube */
+        /* Vídeo */
         .video-container {
             margin: 40px 0;
             text-align: center;
@@ -705,87 +756,211 @@
             transform: translateY(-3px);
         }
         
-        /* Conteúdo principal da página */
+        /* ============================================
+           ÁREA DE CURSOS - TÍTULO ESQUERDA + LISTA DIREITA
+           ============================================ */
         .main-content {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 60px auto;
             padding: 0 20px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        /* Coluna esquerda - Título */
+        .section-header {
+            position: sticky;
+            top: 30px;
+            padding-top: 10px;
         }
         
         .section-title {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
+            font-size: 2.4rem;
+            color: #155f36;
+            margin-bottom: 16px;
+            line-height: 1.15;
+            font-weight: 800;
+            text-align: left;
             position: relative;
         }
         
         .section-title::after {
             content: '';
             display: block;
-            width: 100px;
+            width: 60px;
             height: 4px;
-            background: #333;
-            margin: 10px auto;
+            background: #155f36;
+            margin-top: 16px;
             border-radius: 2px;
         }
         
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .section-description {
+            color: #777;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            text-align: left;
         }
         
-        .course-card {
-            background-color: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .section-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #155f36;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 2px solid #155f36;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            text-align: center;
-            height: 100%;
+        }
+        
+        .section-cta:hover {
+            background: #155f36;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Coluna direita - Lista de cursos */
+        .courses-list {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 10px;
         }
         
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .course-icon {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .course-card h3 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-            min-height: 60px;
+        /* Item da lista */
+        .course-item {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 14px;
+            background: white;
+            border-radius: 12px;
+            padding: 12px 16px 12px 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .course-card p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .course-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, #155f36, #59db93);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
         }
         
-        .course-tag {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 5px 10px;
+        .course-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 18px rgba(21, 95, 54, 0.12);
+            border-color: #d4e9dd;
+        }
+        
+        .course-item:hover::before {
+            transform: scaleY(1);
+        }
+        
+        /* Thumbnail pequena */
+        .course-thumb {
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            background: linear-gradient(135deg, #155f36, #2b9d5e);
+        }
+        
+        .course-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .course-item:hover .course-thumb img {
+            transform: scale(1.1);
+        }
+        
+        /* Tag EAD na thumbnail */
+        .course-thumb-tag {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: #ff6b35;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 800;
+            padding: 1px 4px;
+            border-radius: 3px;
+            letter-spacing: 0.3px;
+        }
+        
+        /* Info do curso */
+        .course-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .course-info h3 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 2px;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .course-info p {
+            font-size: 0.72rem;
+            color: #999;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* Botão Saiba Mais */
+        .course-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #155f36;
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 7px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        
+        .course-btn:hover {
+            background-color: #0f4527;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(21, 95, 54, 0.3);
+        }
+        
+        .course-btn i {
+            font-size: 0.65rem;
+            transition: transform 0.25s ease;
+        }
+        
+        .course-btn:hover i {
+            transform: translateX(2px);
         }
         
         /* Rodapé */
@@ -807,9 +982,10 @@
             justify-content: center;
             gap: 10px;
         }
-      .footer-link {
-    color: #fff;
-}
+        
+        .footer-link {
+            color: #fff;
+        }
         
         .whatsapp-contact {
             display: inline-flex;
@@ -837,37 +1013,16 @@
                 text-align: center;
             }
             
-            .model-container {
-                order: 2;
-            }
+            .model-container { order: 2; }
+            .text-container { order: 1; }
             
-            .text-container {
-                order: 1;
-            }
+            .main-title { font-size: 2.8rem; }
+            .subtitle { font-size: 1.6rem; }
             
-            .main-title {
-                font-size: 2.8rem;
-            }
-            
-            .subtitle {
-                font-size: 1.6rem;
-            }
-            
-            .options-container {
-                flex-direction: column;
-            }
-            
-            .option {
-                min-width: 100%;
-            }
-            
-            .radio-options {
-                flex-direction: column;
-            }
-            
-            .form-row {
-                flex-direction: column;
-            }
+            .options-container { flex-direction: column; }
+            .option { min-width: 100%; }
+            .radio-options { flex-direction: column; }
+            .form-row { flex-direction: column; }
             
             .courses-grid-result {
                 grid-template-columns: repeat(3, 1fr);
@@ -883,14 +1038,44 @@
                 justify-content: center;
             }
             
-            .video-embed {
-                height: 350px;
-            }
+            .video-embed { height: 350px; }
             
             .play-button {
                 width: 70px;
                 height: 70px;
                 font-size: 2rem;
+            }
+            
+            /* Área de cursos - layout empilhado */
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .section-header {
+                position: static;
+                text-align: center;
+            }
+            
+            .section-title {
+                text-align: center;
+                font-size: 2rem;
+            }
+            
+            .section-title::after {
+                margin: 16px auto 0;
+            }
+            
+            .section-description {
+                text-align: center;
+            }
+            
+            .section-cta {
+                margin: 0 auto;
+            }
+
+            .promo-buttons {
+                flex-direction: column;
             }
         }
         
@@ -900,9 +1085,7 @@
                 gap: 15px;
             }
             
-            .video-embed {
-                height: 300px;
-            }
+            .video-embed { height: 300px; }
             
             .play-button {
                 width: 60px;
@@ -912,16 +1095,8 @@
         }
         
         @media (max-width: 600px) {
-            .main-title {
-                font-size: 2.5rem;
-        		line-height: 1;
-            }
-            
-            .subtitle {
-                font-size: 1.3rem;
-        		line-height: 1;
-        		font-weight: 400;
-            }
+            .main-title { font-size: 2.5rem; line-height: 1; }
+            .subtitle { font-size: 1.3rem; line-height: 1; font-weight: 400; }
             
             .cta-button {
                 padding: 15px 30px;
@@ -938,21 +1113,44 @@
                 gap: 15px;
             }
             
-            .btn {
-                width: 100%;
+            .btn { width: 100%; }
+            
+            .course-item {
+                padding: 10px 12px 10px 10px;
+                gap: 10px;
             }
             
-            .courses-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .course-thumb {
+                width: 44px;
+                height: 44px;
+            }
+            
+            .course-info h3 {
+                font-size: 0.85rem;
+            }
+            
+            .course-info p {
+                font-size: 0.68rem;
+            }
+            
+            .course-btn {
+                font-size: 0.68rem;
+                padding: 6px 10px;
+            }
+            
+            .course-btn span {
+                display: none;
+            }
+            
+            .course-btn i {
+                font-size: 0.75rem;
             }
             
             .contact-form-container, .result-container {
                 padding: 20px;
             }
             
-            .video-embed {
-                height: 250px;
-            }
+            .video-embed { height: 250px; }
             
             .play-button {
                 width: 50px;
@@ -963,21 +1161,17 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho com fundo rosa degradê -->
+    <!-- Cabeçalho -->
     <header class="header-container">
         <div class="header-content">
-            <!-- Modelo estudante -->
             <div class="model-container">
-                <img src="./model.png" 
-                     alt="Estudante universitária sorrindo" class="model-image">
+                <img src="./model.png" alt="Estudante universitária sorrindo" class="model-image">
             </div>
             
-            <!-- Texto com as frases -->
             <div class="text-container">
                 <h1 class="main-title">Faça o <span style="color: #ffe72c;">Teste Vocacional</span> da FAI</h1>
                 <p class="subtitle" id="dynamic-subtitle"></p>
                 
-                <!-- Botão para abrir o teste -->
                 <button class="cta-button" id="startTestBtn">
                     <i class="fas fa-play-circle"></i>
                     Iniciar Teste Agora
@@ -986,13 +1180,12 @@
         </div>
     </header>
     
-    <!-- Área de teste (inicialmente oculta) -->
+    <!-- Área de teste -->
     <section class="test-area" id="testArea">
         <div class="test-header" id="testHeader">
             <h2 class="test-title">Teste Vocacional FAI</h2>
             <p class="test-subtitle">Responda 10 perguntas abaixo e descubra qual curso da FAI combina mais com seu perfil, interesses e habilidades.</p>
             
-            <!-- Barra de progresso -->
             <div class="progress-container" id="progressContainer">
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
@@ -1001,11 +1194,9 @@
             </div>
         </div>
         
-        <form class="test-form" id="vocationalTestForm">
-            <!-- As 10 perguntas do teste serão inseridas aqui via JavaScript -->
-        </form>
+        <form class="test-form" id="vocationalTestForm"></form>
         
-        <!-- Formulário de contato (inicialmente oculto) -->
+        <!-- Formulário de contato -->
         <div class="contact-form-container" id="contactFormContainer">
             <h3 class="contact-form-title">Para ver seu resultado, preencha seus dados</h3>
             <form id="contactForm">
@@ -1031,7 +1222,6 @@
                     </div>
                 </div>
                 
-                <!-- Campo Cidade -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="city">Cidade *</label>
@@ -1039,7 +1229,6 @@
                     </div>
                 </div>
                 
-                <!-- Campo Ensino Médio -->
                 <div class="form-row">
                     <div class="form-group">
                         <label>Ensino Médio Completo? *</label>
@@ -1056,7 +1245,6 @@
                     </div>
                 </div>
                 
-                <!-- Campo Condicional para Ano do Ensino Médio -->
                 <div class="form-row" id="highSchoolYearContainer" style="display: none;">
                     <div class="form-group">
                         <label for="highSchoolYear">Qual ano do Ensino Médio você está cursando? *</label>
@@ -1081,25 +1269,38 @@
                     <button type="submit" class="btn btn-send">
                         <i class="fas fa-paper-plane"></i> Ver Resultado
                     </button>
-                    <button type="button" class="btn btn-cancel" id="cancelFormBtn">
-                        Cancelar
-                    </button>
+                    <button type="button" class="btn btn-cancel" id="cancelFormBtn">Cancelar</button>
                 </div>
             </form>
         </div>
+
+        <!-- NOVO: Banner de Bolsa 30% -->
+        <div class="promo-banner-container" id="promoBannerContainer">
+            <!-- Substitua o src abaixo pela imagem enviada (ex: bolsa.png) -->
+            <img src="./bolsa-30.png" alt="Parabéns! Você foi selecionado para uma bolsa de 30% em todo o seu curso!" class="promo-banner-img">
+            
+            <div class="promo-buttons">
+                <a href="https://wa.me/5574999316209?text=Olá,%20vim%20através%20do%20teste%20vocacional%20e%20quero%20resgatar%20minha%20bolsa%20de%2030%25%20para%20o%20meu%20curso." 
+                   target="_blank" 
+                   class="btn-promo-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Resgatar Bolsa
+                </a>
+                
+                <button type="button" class="btn-promo-result" id="revealResultBtn">
+                    <i class="fas fa-eye"></i> Ver Resultado
+                </button>
+            </div>
+        </div>
         
-        <!-- Resultado do teste (inicialmente oculto) -->
+        <!-- Resultado -->
         <div class="result-container" id="resultContainer">
             <h2 class="result-title" id="personalizedResultTitle"></h2>
             <div class="result-area" id="resultAreaText"></div>
             <div class="result-courses">
                 <h3 id="coursesRecommendationTitle">Com base nas suas respostas, esses são os cursos que mais combinam com seu perfil!</h3>
-                <div class="courses-grid-result" id="recommendedCoursesGrid">
-                    <!-- 3 cursos serão inseridos via JavaScript -->
-                </div>
+                <div class="courses-grid-result" id="recommendedCoursesGrid"></div>
             </div>
             
-            <!-- Vídeo do YouTube -->
             <div class="video-container" id="youtubeVideoContainer">
                 <div class="video-title">Conheça mais sobre a FAI - Faculdade Irecê</div>
                 <div class="video-wrapper">
@@ -1119,7 +1320,6 @@
                         </div>
                     </a>
                 </div>
-                
             </div>
                       
             <div class="result-buttons">
@@ -1133,107 +1333,205 @@
         </div>
     </section>
     
-    <!-- Conteúdo principal da página -->
+    <!-- Conteúdo principal: Título esquerda + Lista direita -->
     <main class="main-content">
-        <h2 class="section-title">Cursos Disponíveis na FAI</h2>
+        <!-- Coluna esquerda: Título -->
+        <div class="section-header">
+            <h2 class="section-title">Conheça Nossos Cursos</h2>
+            <p class="section-description">
+                Explore nossa grade completa e encontre o curso perfeito para transformar seu futuro. Fale com a gente e dê o primeiro passo!
+            </p>
+            <a href="https://wa.me/5574999316209" class="section-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i> Fale com um consultor
+            </a>
+        </div>
         
-        <div class="courses-grid">
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-user-nurse"></i>
+        <!-- Coluna direita: Lista compacta -->
+        <div class="courses-list">
+            
+            <!-- ENFERMAGEM -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=120&q=80" alt="Enfermagem">
                 </div>
-                <h3>Enfermagem</h3>
-                <p>Nosso curso insere o aluno nos espaços de trabalho do enfermeiro desde os primeiros semestres através de visitas técnicas e realização de práticas de campo, estimulando a capacidade de raciocínio, a busca de conhecimento e resolução de problemas.</p>
+                <div class="course-info">
+                    <h3>Enfermagem</h3>
+                    <p>Cuidados de saúde e bem-estar</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20ENFERMAGEM" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-brain"></i>
+            <!-- PSICOLOGIA -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&q=80" alt="Psicologia">
                 </div>
-                <h3>Psicologia</h3>
-                <p>O curso de Psicologia proporciona ao aluno o contato com áreas da psicologia que estão em desenvolvimento no país, como a Psicologia jurídica e a Psicologia do Esporte, possibilitando ao aluno um leque de atuação profissional diferenciado.</p>
+                <div class="course-info">
+                    <h3>Psicologia</h3>
+                    <p>Comportamento e saúde mental</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20PSICOLOGIA" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-prescription-bottle-alt"></i>
+            <!-- FARMÁCIA -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=120&q=80" alt="Farmácia">
                 </div>
-                <h3>Farmácia</h3>
-                <p>O curso de farmácia insere o aluno nos campos de prática já nos primeiro semestres e, como utiliza metodologias ativas de ensino-aprendizagem, estimula a capacidade de raciocínio, de busca de conhecimento e resolução de problemas.</p>
+                <div class="course-info">
+                    <h3>Farmácia</h3>
+                    <p>Medicamentos e saúde</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20FARMÁCIA" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-hard-hat"></i>
+            <!-- ODONTOLOGIA -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=120&q=80" alt="Odontologia">
                 </div>
-                <h3>Engenharia Civil</h3>
-                <p>O diferencial do curso de Graduação em Engenharia Civil da FAI está em formar Engenheiros Civis com visão empresarial e gerencial para atuar na gestão das obras, com vivência prática consistente na execução dos processos de construção e suas tecnologias.</p>
+                <div class="course-info">
+                    <h3>Odontologia</h3>
+                    <p>Saúde bucal e tratamentos</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20ODONTOLOGIA" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-tractor"></i>
+            <!-- ENGENHARIA CIVIL -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=120&q=80" alt="Engenharia Civil">
                 </div>
-                <h3>Engenharia Agronômica</h3>
-                <p>Os alunos do curso de Engenharia Agronômica (Agronomia) da FAI possuem à sua disposição laboratórios modernos e equipados, nos quais as aulas teóricas são complementadas com experiências práticas.</p>
+                <div class="course-info">
+                    <h3>Engenharia Civil</h3>
+                    <p>Projeto e construção</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20ENGENHARIA%20CIVIL" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-paw"></i>
+            <!-- ENGENHARIA AGRONÔMICA -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=120&q=80" alt="Engenharia Agronômica">
                 </div>
-                <h3>Medicina Veterinária</h3>
-                <p>O curso visa formar Médicos Veterinários generalistas (que podem atuar na promoção e proteção à saúde de pequenos e grandes animais, na clínica e cirurgia, animais silvestres, medicina preventiva, saúde pública, controle de qualidade na indústria de alimentos de origem animal, Nutrição e na área comercial.</p>
+                <div class="course-info">
+                    <h3>Engenharia Agronômica</h3>
+                    <p>Produção agrícola sustentável</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20ENGENHARIA%20AGRONÔMICA" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-balance-scale"></i>
+            <!-- MEDICINA VETERINÁRIA -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=120&q=80" alt="Medicina Veterinária">
                 </div>
-                <h3>Direito</h3>
-                <p>O curso conta com uma grade curricular estruturada, alinhada às últimas tendências do mercado regional e nacional, principalmente no que diz respeito a temas da atualidade, como a sustentabilidade, tecnologia e novos direitos.</p>
+                <div class="course-info">
+                    <h3>Medicina Veterinária</h3>
+                    <p>Saúde e cuidado animal</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20MEDICINA%20VETERINÁRIA" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-hands-helping"></i>
+            <!-- DIREITO -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=120&q=80" alt="Direito">
                 </div>
-                <h3>Fisioterapia</h3>
-                <p>O curso de Fisioterapia da FAI forma profissionais generalistas, humanistas, críticos, reflexivos, competentes, capacitados para atuar em todos os níveis de atenção à saúde, bem como em outras atividades relacionadas como educação, gestão, consultoria e projetos em saúde.</p>
+                <div class="course-info">
+                    <h3>Direito</h3>
+                    <p>Justiça e defesa de direitos</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20DIREITO" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-calculator"></i>
+            <!-- FISIOTERAPIA -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1597764690523-15bea4c581c9?w=120&q=80" alt="Fisioterapia">
                 </div>
-                <h3>Ciências Contábeis</h3>
-                <p>O curso de Ciências Contábeis da FAI contempla dinâmicas e estratégias teóricas-práticas, objetivando a formação do profissional cidadão, preocupado com o desenvolvimento de competências na área Administrativa.</p>
+                <div class="course-info">
+                    <h3>Fisioterapia</h3>
+                    <p>Reabilitação e movimento</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20FISIOTERAPIA" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-apple-alt"></i>
+            <!-- CIÊNCIAS CONTÁBEIS -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=120&q=80" alt="Ciências Contábeis">
                 </div>
-                <h3>Nutrição</h3>
-                <p>O Egresso do Curso de Nutrição será um profissional com formação generalista, humanista e crítica, preparado para o mundo de trabalho.</p>
+                <div class="course-info">
+                    <h3>Ciências Contábeis</h3>
+                    <p>Gestão financeira e auditoria</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20CIÊNCIAS%20CONTÁBEIS" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-chart-line"></i>
+            <!-- NUTRIÇÃO -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=120&q=80" alt="Nutrição">
                 </div>
-                <h3>Administração</h3>
-                <p>O curso de Administração da FAI contempla dinâmicas e estratégias teóricas-práticas, objetivando a formação do profissional cidadão, preocupado com o desenvolvimento de competências na área Administrativa.</p>
+                <div class="course-info">
+                    <h3>Nutrição</h3>
+                    <p>Alimentação saudável</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20NUTRIÇÃO" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-laptop-house"></i>
+            <!-- ADMINISTRAÇÃO -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=120&q=80" alt="Administração">
                 </div>
-                <h3>Administração EAD</h3>
-                <p>O curso de Administração da FAI contempla dinâmicas e estratégias teóricas-práticas, objetivando a formação do profissional cidadão, preocupado com o desenvolvimento de competências na área Administrativa.</p>
-                <span class="course-tag">EAD</span>
+                <div class="course-info">
+                    <h3>Administração</h3>
+                    <p>Gestão e liderança</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20ADMINISTRAÇÃO" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
+            
+            <!-- ADMINISTRAÇÃO EAD -->
+            <div class="course-item">
+                <div class="course-thumb">
+                    <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=120&q=80" alt="Administração EAD">
+                    <span class="course-thumb-tag">EAD</span>
+                </div>
+                <div class="course-info">
+                    <h3>Administração EAD</h3>
+                    <p>Gestão com flexibilidade online</p>
+                </div>
+                <a href="https://wa.me/5574999316209?text=Olá!%20Quero%20saber%20mais%20sobre%20ADMINISTRAÇÃO%20EAD" class="course-btn" target="_blank">
+                    <span>Saiba mais</span> <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
         </div>
     </main>
     
@@ -1243,17 +1541,15 @@
             <span>FAI - Faculdade Irecê</span>
         </div>
         <p>© 2025 - 2026 Teste Vocacional FAI. Desenvolvido por <a href='https://wa.me/+5574999668299' target='_blank' class='footer-link'>@irece360</a></p>
-               <a href="https://wa.me/5574999316209" class="whatsapp-contact" target="_blank">
+        <a href="https://wa.me/5574999316209" class="whatsapp-contact" target="_blank">
             <i class="fab fa-whatsapp"></i>
             WhatsApp: (74) 99931-6209
         </a>
     </footer>
     
     <script>
-        // URL ATUALIZADA do Google Apps Script para envio dos dados
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxY4kSHpqy5NPSPv14_40xEEi_A8WGVxe6mCJpfSIMFbCmlQzqxqhpXp2xDmCEgUwAB/exec';
         
-        // Elementos do DOM
         const startTestBtn = document.getElementById('startTestBtn');
         const testArea = document.getElementById('testArea');
         const testHeader = document.getElementById('testHeader');
@@ -1261,6 +1557,11 @@
         const vocationalTestForm = document.getElementById('vocationalTestForm');
         const contactFormContainer = document.getElementById('contactFormContainer');
         const contactForm = document.getElementById('contactForm');
+        
+        // Elementos do novo banner
+        const promoBannerContainer = document.getElementById('promoBannerContainer');
+        const revealResultBtn = document.getElementById('revealResultBtn');
+        
         const resultContainer = document.getElementById('resultContainer');
         const resultAreaText = document.getElementById('resultAreaText');
         const recommendedCoursesGrid = document.getElementById('recommendedCoursesGrid');
@@ -1271,16 +1572,13 @@
         const personalizedResultTitle = document.getElementById('personalizedResultTitle');
         const coursesRecommendationTitle = document.getElementById('coursesRecommendationTitle');
         
-        // Estado do teste
         let currentQuestion = 0;
         let testStarted = false;
         let userAnswers = {};
         let highSchoolCompleted = false;
         
-        // Texto para o subtítulo
         const subtitleText = "e descubra qual curso combina mais com seu perfil!";
         
-        // Perguntas do teste
         const testQuestions = [
             {
                 question: "Qual tipo de atividade você mais gosta de realizar?",
@@ -1374,7 +1672,6 @@
             }
         ];
         
-        // Banco de dados de cursos com descrições e links WhatsApp
         const coursesDatabase = {
             Enfermagem: {
                 icon: 'fa-user-nurse',
@@ -1390,6 +1687,11 @@
                 icon: 'fa-prescription-bottle-alt',
                 description: 'Atuação na manipulação, dispensação e controle de medicamentos, além de orientação sobre uso correto de produtos para saúde.',
                 whatsapp: 'https://wa.me/5574999316209?text=Olá!%20Gostaria%20de%20me%20inscrever%20no%20curso%20de%20FARMÁCIA%20da%20FAI'
+            },
+            Odontologia: {
+                icon: 'fa-tooth',
+                description: 'Formação para promoção da saúde bucal, prevenção de doenças, diagnóstico e tratamento odontológico em diferentes especialidades.',
+                whatsapp: 'https://wa.me/5574999316209?text=Olá!%20Gostaria%20de%20me%20inscrever%20no%20curso%20de%20ODONTOLOGIA%20da%20FAI'
             },
             'Engenharia Civil': {
                 icon: 'fa-hard-hat',
@@ -1438,21 +1740,16 @@
             }
         };
         
-        // Função para atualizar a barra de progresso
         function updateProgressBar() {
             const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
             const progressPercentage = ((currentQuestion + 1) / testQuestions.length) * 100;
-            
             progressFill.style.width = `${progressPercentage}%`;
             progressText.textContent = `Pergunta ${currentQuestion + 1} de ${testQuestions.length}`;
         }
         
-        // Inicializar o subtítulo
         function initializeSubtitle() {
             dynamicSubtitle.textContent = '';
-            
-            // Efeito de digitação
             let charIndex = 0;
             function typeWriterEffect() {
                 if (charIndex < subtitleText.length) {
@@ -1461,15 +1758,12 @@
                     setTimeout(typeWriterEffect, 40);
                 }
             }
-            
-            // Iniciar efeito após carregar a página
             setTimeout(typeWriterEffect, 500);
         }
         
-        // Renderizar as perguntas do teste
         function renderTestQuestions() {
             vocationalTestForm.innerHTML = '';
-            updateProgressBar(); // Inicializar barra de progresso
+            updateProgressBar();
             
             testQuestions.forEach((question, index) => {
                 const questionContainer = document.createElement('div');
@@ -1490,23 +1784,20 @@
                 questionContainer.innerHTML = `
                     <span class="question-number">${index + 1}</span>
                     <span class="question-text">${question.question}</span>
-                    <div class="options-container">
-                        ${optionsHTML}
-                    </div>
+                    <div class="options-container">${optionsHTML}</div>
                 `;
                 
                 vocationalTestForm.appendChild(questionContainer);
             });
             
-            // Adicionar botões de navegação
             const buttonsContainer = document.createElement('div');
             buttonsContainer.className = 'test-buttons';
             buttonsContainer.innerHTML = `
                 <button type="button" class="btn btn-prev" id="prevBtn" disabled>
-                    <i class="fas fa-arrow-left"></i> Pergunta Anterior
+                    <i class="fas fa-arrow-left"></i> Anterior
                 </button>
                 <button type="button" class="btn btn-next" id="nextBtn">
-                    Próxima Pergunta <i class="fas fa-arrow-right"></i>
+                    Próxima <i class="fas fa-arrow-right"></i>
                 </button>
                 <button type="button" class="btn btn-submit" id="submitTestBtn">
                     <i class="fas fa-paper-plane"></i> Ver Resultado
@@ -1515,66 +1806,43 @@
             
             vocationalTestForm.appendChild(buttonsContainer);
             
-            // Adicionar event listeners aos botões
             document.getElementById('prevBtn').addEventListener('click', prevQuestion);
             document.getElementById('nextBtn').addEventListener('click', nextQuestion);
             document.getElementById('submitTestBtn').addEventListener('click', submitTest);
         }
         
-        // Navegar para próxima pergunta
         function nextQuestion() {
             if (currentQuestion < testQuestions.length - 1) {
-                // Salvar resposta atual
                 const selectedOption = document.querySelector(`input[name="q${currentQuestion + 1}"]:checked`);
-                if (selectedOption) {
-                    userAnswers[`q${currentQuestion + 1}`] = selectedOption.value;
-                }
+                if (selectedOption) userAnswers[`q${currentQuestion + 1}`] = selectedOption.value;
                 
-                // Esconder pergunta atual
                 document.getElementById(`question-${currentQuestion}`).style.display = 'none';
-                
-                // Mostrar próxima pergunta
                 currentQuestion++;
                 document.getElementById(`question-${currentQuestion}`).style.display = 'block';
-                
-                // Atualizar botões e barra de progresso
                 updateButtons();
                 updateProgressBar();
-                
-                // Rolar suavemente para a pergunta
                 document.getElementById(`question-${currentQuestion}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
         
-        // Navegar para pergunta anterior
         function prevQuestion() {
             if (currentQuestion > 0) {
-                // Esconder pergunta atual
                 document.getElementById(`question-${currentQuestion}`).style.display = 'none';
-                
-                // Mostrar pergunta anterior
                 currentQuestion--;
                 document.getElementById(`question-${currentQuestion}`).style.display = 'block';
-                
-                // Atualizar botões e barra de progresso
                 updateButtons();
                 updateProgressBar();
-                
-                // Rolar suavemente para a pergunta
                 document.getElementById(`question-${currentQuestion}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
         
-        // Atualizar estado dos botões
         function updateButtons() {
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const submitTestBtn = document.getElementById('submitTestBtn');
             
-            // Botão anterior
             prevBtn.disabled = currentQuestion === 0;
             
-            // Botão próximo e submit
             if (currentQuestion < testQuestions.length - 1) {
                 nextBtn.style.display = 'block';
                 submitTestBtn.style.display = 'none';
@@ -1584,15 +1852,10 @@
             }
         }
         
-        // Processar envio do teste
         function submitTest() {
-            // Salvar última resposta
             const selectedOption = document.querySelector(`input[name="q${currentQuestion + 1}"]:checked`);
-            if (selectedOption) {
-                userAnswers[`q${currentQuestion + 1}`] = selectedOption.value;
-            }
+            if (selectedOption) userAnswers[`q${currentQuestion + 1}`] = selectedOption.value;
             
-            // Verificar se todas as perguntas foram respondidas
             const allAnswered = Object.keys(userAnswers).length === testQuestions.length;
             
             if (!allAnswered) {
@@ -1600,31 +1863,18 @@
                 return;
             }
             
-            // Mostrar formulário de contato
             vocationalTestForm.style.display = 'none';
             contactFormContainer.style.display = 'block';
-            
-            // Rolar suavemente para o formulário
             contactFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         
-        // Calcular resultado do teste (apenas 3 cursos)
         function calculateResult() {
-            const areaCounts = {
-                saude: 0,
-                exatas: 0,
-                humanas: 0,
-                biologicas: 0
-            };
+            const areaCounts = { saude: 0, exatas: 0, humanas: 0, biologicas: 0 };
             
-            // Contar respostas por área
             Object.values(userAnswers).forEach(answer => {
-                if (areaCounts.hasOwnProperty(answer)) {
-                    areaCounts[answer]++;
-                }
+                if (areaCounts.hasOwnProperty(answer)) areaCounts[answer]++;
             });
             
-            // Determinar área predominante
             let predominantArea = '';
             let maxCount = 0;
             
@@ -1635,18 +1885,15 @@
                 }
             }
             
-            // Mapear área para cursos (apenas 3 por área)
             const areaToCourses = {
-                saude: ['Enfermagem', 'Farmácia', 'Fisioterapia'],
+                saude: ['Enfermagem', 'Odontologia', 'Fisioterapia'],
                 exatas: ['Engenharia Civil', 'Ciências Contábeis', 'Administração'],
                 humanas: ['Psicologia', 'Direito', 'Administração'],
                 biologicas: ['Medicina Veterinária', 'Engenharia Agronômica', 'Nutrição']
             };
             
-            // Pegar apenas os 3 cursos da área predominante
             const courseNames = areaToCourses[predominantArea] || ['Administração', 'Psicologia', 'Nutrição'];
             
-            // Criar array de objetos dos cursos com suas informações
             const recommendedCourses = courseNames.map(courseName => ({
                 name: courseName,
                 icon: coursesDatabase[courseName]?.icon || 'fa-graduation-cap',
@@ -1654,7 +1901,6 @@
                 whatsapp: coursesDatabase[courseName]?.whatsapp || 'https://wa.me/5574999316209'
             }));
             
-            // Nomes das áreas
             const areaNames = {
                 saude: 'Saúde',
                 exatas: 'Exatas e Gestão',
@@ -1662,49 +1908,37 @@
                 biologicas: 'Biológicas e Agrárias'
             };
             
-            return {
-                area: areaNames[predominantArea],
-                courses: recommendedCourses
-            };
+            return { area: areaNames[predominantArea], courses: recommendedCourses };
         }
         
-        // Mostrar resultado com 3 cursos - MODIFICADA PARA INCLUIR NOME DO USUÁRIO
+        // Função modificada para mostrar o Banner primeiro
         function showResult() {
             const result = calculateResult();
-            
-            // Obter o nome do usuário do formulário
             const firstName = document.getElementById('firstName').value.trim();
             const userName = firstName || 'Estudante';
             
-            // Atualizar título personalizado com o nome do usuário
             if (personalizedResultTitle) {
                 personalizedResultTitle.innerHTML = `Oi <span style="color: #e55ca4; font-weight: 800;">${userName}</span>, aqui está o Resultado do seu Teste Vocacional!`;
             }
             
-            // Atualizar subtítulo dos cursos (já configurado no HTML)
             if (coursesRecommendationTitle) {
                 coursesRecommendationTitle.textContent = 'Com base nas suas respostas, esses são os cursos que mais combinam com seu perfil!';
             }
             
-            // Atualizar área do resultado
             resultAreaText.textContent = `Área: ${result.area}`;
             
-            // Limpar e adicionar os 3 cursos recomendados
             recommendedCoursesGrid.innerHTML = '';
             result.courses.forEach(course => {
                 const courseCard = document.createElement('div');
                 courseCard.className = 'course-card-result';
                 
-                // Verificar se ensino médio está completo para mostrar botão WhatsApp
                 const whatsappButton = highSchoolCompleted ? 
                     `<a href="${course.whatsapp}" class="whatsapp-inscricao" target="_blank">
                         <i class="fab fa-whatsapp"></i> Inscreva-se Agora!
                     </a>` : '';
                 
                 courseCard.innerHTML = `
-                    <div class="course-icon-result">
-                        <i class="fas ${course.icon}"></i>
-                    </div>
+                    <div class="course-icon-result"><i class="fas ${course.icon}"></i></div>
                     <h4>${course.name}</h4>
                     <p>${course.description}</p>
                     ${whatsappButton}
@@ -1712,29 +1946,40 @@
                 recommendedCoursesGrid.appendChild(courseCard);
             });
             
-            // ESCONDER cabeçalho do teste, barra de progresso e formulário
             testHeader.classList.add('hidden');
             progressContainer.classList.add('hidden');
             vocationalTestForm.classList.add('hidden');
             
-            // Mostrar resultado
             contactFormContainer.style.display = 'none';
-            resultContainer.style.display = 'block';
             
-            // Rolar suavemente para o resultado
-            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // MOSTRA O BANNER, MAS NÃO O RESULTADO AINDA
+            promoBannerContainer.style.display = 'block';
+            resultContainer.style.display = 'none';
+            
+            // Rola para o banner
+            promoBannerContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+
+        // NOVO: Função para o botão "Ver Resultado" dentro do Banner
+        revealResultBtn.addEventListener('click', function() {
+            promoBannerContainer.style.display = 'none';
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Dispara um evento para o Google Analytics (opcional)
+            if (typeof gtag === 'function') {
+                gtag('event', 'view_vocational_result', {
+                    'event_category': 'Teste Vocacional',
+                    'event_label': 'Resultado Revelado'
+                });
+            }
+        });
         
-        // Enviar dados para o Google Apps Script (COM NOVA URL)
         function sendDataToGoogleScript(userData, testResult) {
-            // Coletar dados do ensino médio
             const highSchoolComplete = document.querySelector('input[name="highSchoolComplete"]:checked');
             const highSchoolYear = document.getElementById('highSchoolYear').value;
-            
-            // Atualizar variável global com status do ensino médio
             highSchoolCompleted = highSchoolComplete ? highSchoolComplete.value === 'Sim' : false;
             
-            // Preparar dados para envio
             const payload = {
                 firstName: userData.firstName,
                 lastName: userData.lastName,
@@ -1748,91 +1993,62 @@
                 ...userAnswers
             };
             
-            console.log("Enviando dados para Google Sheets:", payload);
-            console.log("URL do Google Script:", GOOGLE_SCRIPT_URL);
-            
-            // Criar FormData
             const formData = new FormData();
             Object.keys(payload).forEach(key => {
-                if (payload[key] !== undefined && payload[key] !== null) {
-                    formData.append(key, payload[key]);
-                }
+                if (payload[key] !== undefined && payload[key] !== null) formData.append(key, payload[key]);
             });
             
-            // Adicionar timestamp
             formData.append('timestamp', new Date().toISOString());
             
-            // Enviar para o Google Apps Script COM A NOVA URL
             return fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 body: formData,
-                mode: 'no-cors' // Modo no-cors para evitar problemas de CORS
+                mode: 'no-cors'
             })
-            .then(() => {
-                console.log("✅ Dados enviados com sucesso para:", GOOGLE_SCRIPT_URL);
-                return { success: true };
-            })
-            .catch(error => {
-                console.error("❌ Erro ao enviar dados:", error);
-                throw error;
-            });
+            .then(() => ({ success: true }))
+            .catch(error => { throw error; });
         }
         
-        // Abrir/fechar área de teste
         startTestBtn.addEventListener('click', function() {
             if (!testStarted) {
-                // Abrir área de teste
                 testArea.classList.add('active');
                 testStarted = true;
-                
-                // Inicializar teste
                 renderTestQuestions();
                 userAnswers = {};
                 currentQuestion = 0;
                 
-                // MOSTRAR cabeçalho do teste, barra de progresso e formulário
                 testHeader.classList.remove('hidden');
                 progressContainer.classList.remove('hidden');
                 vocationalTestForm.classList.remove('hidden');
+                promoBannerContainer.style.display = 'none'; // Garante que o banner está oculto ao iniciar
+                resultContainer.style.display = 'none';
                 
-                // Rolar suavemente para a área de teste
-                setTimeout(() => {
-                    testArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
-                
-                // Alterar texto do botão
+                setTimeout(() => { testArea.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
                 this.innerHTML = '<i class="fas fa-times"></i> Fechar Teste';
             } else {
-                // Fechar área de teste
                 closeTestArea();
             }
         });
         
-        // Fechar área de teste
         function closeTestArea() {
             testArea.classList.remove('active');
             testStarted = false;
             vocationalTestForm.style.display = 'block';
             contactFormContainer.style.display = 'none';
+            promoBannerContainer.style.display = 'none';
             resultContainer.style.display = 'none';
             
-            // MOSTRAR cabeçalho do teste, barra de progresso e formulário
             testHeader.classList.remove('hidden');
             progressContainer.classList.remove('hidden');
             vocationalTestForm.classList.remove('hidden');
             
-            // Restaurar texto do botão
             startTestBtn.innerHTML = '<i class="fas fa-play-circle"></i> Iniciar Teste Agora';
-            
-            // Rolar para o topo
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
-        // Processar envio do formulário de contato
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Coletar dados do formulário
             const userData = {
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
@@ -1841,21 +2057,17 @@
                 city: document.getElementById('city').value.trim()
             };
             
-            // Validar dados
-            if (!userData.firstName || !userData.lastName || !userData.phone || 
-                !userData.email || !userData.city) {
+            if (!userData.firstName || !userData.lastName || !userData.phone || !userData.email || !userData.city) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
             
-            // Verificar se ensino médio foi respondido
             const highSchoolComplete = document.querySelector('input[name="highSchoolComplete"]:checked');
             if (!highSchoolComplete) {
                 alert('Por favor, informe se concluiu o Ensino Médio.');
                 return;
             }
             
-            // Se ensino médio não completo, verificar ano
             if (highSchoolComplete.value === 'Não') {
                 const highSchoolYear = document.getElementById('highSchoolYear').value;
                 if (!highSchoolYear) {
@@ -1864,65 +2076,42 @@
                 }
             }
             
-            // Verificar termos aceitos
             if (!document.getElementById('terms').checked) {
                 alert('Você precisa aceitar os Termos de Uso e Política de Privacidade.');
                 return;
             }
             
-            // Calcular resultado
             const testResult = calculateResult();
-            
-            // Mostrar loading
             const submitBtn = this.querySelector('.btn-send');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Exibindo Resultado...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
             submitBtn.disabled = true;
             
-            // Enviar dados para o Google Apps Script
             sendDataToGoogleScript(userData, testResult)
-                .then(() => {
-                    // Mostrar resultado após envio
-                    showResult();
-                    console.log("✅ Dados enviados com sucesso para Google Sheets!");
-                    console.log("✅ URL utilizada:", GOOGLE_SCRIPT_URL);
-                })
-                .catch(error => {
-                    console.error("❌ Erro ao enviar dados:", error);
-                    console.error("❌ URL que tentou usar:", GOOGLE_SCRIPT_URL);
-                    // Mesmo com erro, mostrar resultado
+                .then(() => showResult())
+                .catch(() => {
                     showResult();
                     alert('Resultado gerado! Os dados foram processados localmente.');
                 })
                 .finally(() => {
-                    // Restaurar botão
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
         });
         
-        // Cancelar formulário
         cancelFormBtn.addEventListener('click', function() {
             contactFormContainer.style.display = 'none';
             vocationalTestForm.style.display = 'block';
-            
-            // MOSTRAR cabeçalho do teste, barra de progresso e formulário
             testHeader.classList.remove('hidden');
             progressContainer.classList.remove('hidden');
             vocationalTestForm.classList.remove('hidden');
         });
         
-        // Reiniciar teste
         restartTestBtn.addEventListener('click', function() {
             closeTestArea();
-            
-            // Aguardar um pouco antes de reabrir o teste
-            setTimeout(() => {
-                startTestBtn.click();
-            }, 500);
+            setTimeout(() => { startTestBtn.click(); }, 500);
         });
         
-        // Configurar lógica condicional para campo de ensino médio
         function setupHighSchoolField() {
             const highSchoolYes = document.getElementById('highSchoolYes');
             const highSchoolNo = document.getElementById('highSchoolNo');
@@ -1946,17 +2135,12 @@
             }
         }
         
-        // Configurar vídeo do YouTube
         function setupYouTubeVideo() {
             if (youtubeOverlay) {
-                // Quando clicar no overlay, abrir o vídeo específico com subscribe=1
                 youtubeOverlay.href = 'https://www.youtube.com/watch?v=G28FvzCtRSA&sub_confirmation=1';
-                
-                console.log("✅ Link do YouTube configurado para abrir o vídeo específico com opção de inscrição");
             }
         }
         
-        // Termos de uso e política de privacidade
         document.getElementById('termsLink').addEventListener('click', function() {
             alert('TERMOS DE USO\n\nAo preencher este formulário, você concorda em:\n1. Receber informações sobre os cursos da FAI - Faculdade Irecê\n2. Ter seus dados utilizados para fins educacionais\n3. Ser contactado pela equipe da FAI para orientação vocacional\n\nSeus dados serão tratados com confidencialidade.');
         });
@@ -1965,28 +2149,17 @@
             alert('POLÍTICA DE PRIVACIDADE\n\nA FAI - Faculdade Irecê compromete-se a proteger seus dados pessoais:\n\n1. As informações coletadas serão utilizadas apenas para:\n   - Contato sobre os cursos oferecidos\n   - Orientação vocacional personalizada\n   - Envio de informações acadêmicas\n\n2. Seus dados NÃO serão:\n   - Compartilhados com terceiros sem autorização\n   - Utilizados para fins comerciais\n   - Armazenados além do necessário\n\n3. Você pode solicitar a exclusão de seus dados a qualquer momento.');
         });
         
-        // Iniciar efeitos após carregar a página
         window.onload = function() {
-            // Inicializar subtítulo
             initializeSubtitle();
-            
-            // Configurar campo condicional do ensino médio
             setupHighSchoolField();
-            
-            // Configurar vídeo do YouTube
             setupYouTubeVideo();
             
-            // Adicionar efeito de flutuação suave à imagem da modelo
             const modelImage = document.querySelector('.model-image');
             if (modelImage) {
                 setInterval(() => {
                     modelImage.style.transform = `translateY(${Math.sin(Date.now() / 1000) * 5}px)`;
                 }, 50);
             }
-            
-            // Verificar se a URL do Google Script está configurada
-            console.log("✅ URL do Google Apps Script configurada:", GOOGLE_SCRIPT_URL);
-            console.log("✅ Site do Teste Vocacional FAI carregado com sucesso!");
         };
     </script>
 </body>
