@@ -128,7 +128,7 @@
         }
         
         .test-area.active {
-            max-height: 5000px; /* Aumentado para caber o banner */
+            max-height: 5000px;
             padding: 40px 20px;
             margin-top: -10px;
             z-index: 10;
@@ -455,7 +455,7 @@
            NOVO: BANNER DE BOLSA 30%
            ============================================ */
         .promo-banner-container {
-            display: none; /* Escondido por padrão */
+            display: none;
             max-width: 900px;
             margin: 0 auto 30px auto;
             text-align: center;
@@ -1217,13 +1217,6 @@
                         <input type="tel" id="phone" name="phone" required placeholder="(74) 99999-9999">
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
                         <label for="city">Cidade *</label>
                         <input type="text" id="city" name="city" required placeholder="Ex: Irecê, São Gabriel, etc.">
                     </div>
@@ -1240,6 +1233,22 @@
                             <div class="radio-option">
                                 <input type="radio" id="highSchoolNo" name="highSchoolComplete" value="Não" required>
                                 <label for="highSchoolNo">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Você já é aluno da FAI? *</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="faiStudentYes" name="faiStudent" value="Sim" required>
+                                <label for="faiStudentYes">Sim</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="faiStudentNo" name="faiStudent" value="Não" required>
+                                <label for="faiStudentNo">Não</label>
                             </div>
                         </div>
                     </div>
@@ -1911,7 +1920,6 @@
             return { area: areaNames[predominantArea], courses: recommendedCourses };
         }
         
-        // Função modificada para mostrar o Banner primeiro
         function showResult() {
             const result = calculateResult();
             const firstName = document.getElementById('firstName').value.trim();
@@ -1952,21 +1960,17 @@
             
             contactFormContainer.style.display = 'none';
             
-            // MOSTRA O BANNER, MAS NÃO O RESULTADO AINDA
             promoBannerContainer.style.display = 'block';
             resultContainer.style.display = 'none';
             
-            // Rola para o banner
             promoBannerContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // NOVO: Função para o botão "Ver Resultado" dentro do Banner
         revealResultBtn.addEventListener('click', function() {
             promoBannerContainer.style.display = 'none';
             resultContainer.style.display = 'block';
             resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
             
-            // Dispara um evento para o Google Analytics (opcional)
             if (typeof gtag === 'function') {
                 gtag('event', 'view_vocational_result', {
                     'event_category': 'Teste Vocacional',
@@ -1977,6 +1981,7 @@
         
         function sendDataToGoogleScript(userData, testResult) {
             const highSchoolComplete = document.querySelector('input[name="highSchoolComplete"]:checked');
+            const faiStudent = document.querySelector('input[name="faiStudent"]:checked');
             const highSchoolYear = document.getElementById('highSchoolYear').value;
             highSchoolCompleted = highSchoolComplete ? highSchoolComplete.value === 'Sim' : false;
             
@@ -1984,9 +1989,9 @@
                 firstName: userData.firstName,
                 lastName: userData.lastName,
                 phone: userData.phone,
-                email: userData.email,
                 city: userData.city,
                 highSchoolComplete: highSchoolComplete ? highSchoolComplete.value : '',
+                faiStudent: faiStudent ? faiStudent.value : '',
                 highSchoolYear: highSchoolYear || '',
                 resultArea: testResult.area,
                 resultCourses: testResult.courses.map(c => c.name).join(', '),
@@ -2020,7 +2025,7 @@
                 testHeader.classList.remove('hidden');
                 progressContainer.classList.remove('hidden');
                 vocationalTestForm.classList.remove('hidden');
-                promoBannerContainer.style.display = 'none'; // Garante que o banner está oculto ao iniciar
+                promoBannerContainer.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 setTimeout(() => { testArea.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
@@ -2053,11 +2058,10 @@
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
-                email: document.getElementById('email').value.trim(),
                 city: document.getElementById('city').value.trim()
             };
             
-            if (!userData.firstName || !userData.lastName || !userData.phone || !userData.email || !userData.city) {
+            if (!userData.firstName || !userData.lastName || !userData.phone || !userData.city) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
@@ -2065,6 +2069,12 @@
             const highSchoolComplete = document.querySelector('input[name="highSchoolComplete"]:checked');
             if (!highSchoolComplete) {
                 alert('Por favor, informe se concluiu o Ensino Médio.');
+                return;
+            }
+            
+            const faiStudent = document.querySelector('input[name="faiStudent"]:checked');
+            if (!faiStudent) {
+                alert('Por favor, informe se você já é aluno da FAI.');
                 return;
             }
             
